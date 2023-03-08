@@ -1,0 +1,196 @@
+		<head>
+		<title>Kuramsal Pozisyonlar</title>
+<!-- Plotly.js -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+		</head>
+		<body>
+		<!-- Plotly chart will be drawn inside this DIV -->
+		<div id="myDiv" style="width:100%;height:100%"></div>
+		<script>
+			var trace1 = {
+			  name: 'Psikanalitik Yaklaşım',
+			  x : [0],
+			  y: [2],
+			  z : [1],
+			  mode: 'markers',
+			  marker: {
+				size: 15,
+				line: {
+				  color: 'rgba(217, 217, 217, 0.14)',
+				  width: 0.5
+				},
+				opacity: 0.8
+			  },
+			  type: 'scatter3d'
+			};
+
+			var trace2 = {
+			  name: 'Davranışçılık ve Sosyal Öğrenme',
+			  x : [2],
+			  y: [0],
+			  z : [2],
+			  mode: 'markers',
+			  marker: {
+				size: 15,
+				line: {
+				  color: 'rgba(217, 217, 217, 0.14)',
+				  width: 0.5
+				},
+				opacity: 0.8
+			  },
+			  type: 'scatter3d'
+			};
+
+			var trace3 = {
+			  name: 'Piaget Bilişsel Gelişim Teorisi',
+			  x : [0],
+			  y: [2],
+			  z : [1],
+			  mode: 'markers',
+			  marker: {
+				size: 12,
+				line: {
+				  color: 'rgba(217, 217, 217, 0.14)',
+				  width: 0.5
+				},
+				 mode : 'markers',
+				opacity: 0.8
+			  },
+			  type: 'scatter3d'
+			};
+
+			var trace4 = {
+			  name: 'Bilgi İşleme',
+			  x : [2],
+			  y: [2],
+			  z : [1],
+			  mode: 'markers',
+			  marker: {
+				size: 15,
+				line: {
+				  color: 'rgba(217, 217, 217, 0.14)',
+				  width: 0.5
+				},
+				opacity: 0.8
+			  },
+			  type: 'scatter3d'
+			};
+
+			var trace5 = {
+			  name: 'Etoloji ve Evrimsel Gelişim Psikolojisi',
+			  x : [1],
+			  y: [2],
+			  z : [1],
+			  mode: 'markers',
+			  marker: {
+				size: 15,
+				line: {
+				  color: 'rgba(217, 217, 217, 0.14)',
+				  width: 0.5
+				},
+				opacity: 0.8
+			  },
+			  type: 'scatter3d'
+			};
+
+			var trace6 = {
+			  name: 'Vygotsky Sosyokültürel Teorisi',
+			  x : [1],
+			  y: [0],
+			  z : [1],
+			  mode: 'markers',
+			  marker: {
+				size: 15,
+				line: {
+				  color: 'rgba(217, 217, 217, 0.14)',
+				  width: 0.5
+				},
+				opacity: 0.8
+			  },
+			  type: 'scatter3d'
+			};
+
+			var trace7 = {
+			  name: 'Ekolojik Sistem Teorisi',
+			  x : [1],
+			  y: [0],
+			  z : [1],
+			  mode: 'markers',
+			  marker: {
+				size: 12,
+				line: {
+				  color: 'rgba(217, 217, 217, 0.14)',
+				  width: 0.5
+				},
+				opacity: 0.8
+			  },
+			  type: 'scatter3d'
+			};
+
+			var trace8 = {
+			  name: 'Dinamik Sistemler Yaklaşımı',
+			  x : [1],
+			  y: [0],
+			  z : [1],
+			  mode: 'markers',
+			  marker: {
+				size: 9,
+				line: {
+				  color: 'rgba(217, 217, 217, 0.14)',
+				  width: 0.5
+				},
+				opacity: 0.8
+			  },
+			  type: 'scatter3d'
+			};
+
+			var trace9 = {
+			  name: '',
+			  x : [0],
+			  y: [0],
+			  z : [0],
+			  mode: 'markers',
+			  marker: {
+				size: 0,
+				line: {
+				  color: 'rgba(0, 0, 0, 0)',
+				  width: 0
+				},
+				opacity: 0
+			  },
+			  type: 'scatter3d'
+			};
+
+			var data = [trace1, trace2,trace3,trace4,trace5,trace6,trace7,trace8,trace9];
+			var layout = {
+			  scene: {
+				margin: {
+				l: 0,
+				r: 0,
+				b: 0,
+				t: 0
+			  },
+				xaxis:{title: 'X: Kesintiliden (0) Sürekliye (2)'},
+				yaxis:{title: 'Y: Çokludan (0) Evrensele (2)'},
+				zaxis:{title: 'Z: Kalıtımdan (0) Çevreye (2)'},
+			  }};     
+			Plotly.newPlot('myDiv', data, layout);
+
+			$("#this_button").click(function(){
+			  console.log("clicked");
+			  var update = {
+					  x : [[1,2,3,4,5]],
+					  y : [[1,2,3,4,5]],
+					  z : [[1,2,3,4,5]],
+					  size :[[12,13,14,15,16]],
+					  'marker.color' : [["#001","#005","#0f0","#f00","#00f"]],
+					   text : "size"
+				  }
+				  
+				   Plotly.restyle('myDiv', update,[0,1,2,3,4]);
+			});
+		</script>
+		</body>
+
+		
